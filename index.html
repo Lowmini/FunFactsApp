@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #facts-container {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dog Facts</h1>
+        <div id="facts-container"></div>
+        <button id="new-fact-btn">Get a New Fact</button>
+    </div>
+    <script>
+        const dogFacts = [
+            "Dogs have been our companions for over 14,000 years.",
+            "Dogs can learn over 165 words.",
+            "The Basenji dog is known as the 'barkless dog' because it doesn't bark.",
+            "Dogs have a sense of smell that is 40 times better than humans.",
+            "A Greyhound is the fastest dog breed, capable of reaching speeds up to 45 mph.",
+            "Dogs are as smart as a two-year-old child.",
+            "The Labrador Retriever has been the most popular dog breed in the U.S. for over 25 years.",
+            "Dogs can hear sounds at frequencies as high as 65,000 Hz.",
+            "A dog's nose print is unique, much like a human fingerprint.",
+            "Dogs can be trained to detect diseases in humans."
+        ];
+
+        function displayRandomFact() {
+            const randomIndex = Math.floor(Math.random() * dogFacts.length);
+            const factsContainer = document.getElementById('facts-container');
+            factsContainer.textContent = dogFacts[randomIndex];
+        }
+
+        // Display a random fact on page load
+        window.onload = displayRandomFact;
+
+        // Add event listener to button
+        document.getElementById('new-fact-btn').addEventListener('click', displayRandomFact);
+    </script>
+</body>
+</html>
