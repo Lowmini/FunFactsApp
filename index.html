@@ -62,12 +62,19 @@
     button:hover {
       background-color: #1e7e34;
     }
+    #facts-text {
+  font-size: 1.2em;
+  color: #555;
+  margin: 20px 0;
+}
+
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Dog Facts</h1>
-    <div id="facts-box">Hover Me!</div>
+    <div id="facts-box"></div>
+    <div id="facts-text"></div>    
     <button id="new-fact-btn">Get a New Fact</button>
   </div>
 
@@ -86,10 +93,11 @@
     ];
 
     function displayRandomFact() {
-      const randomIndex = Math.floor(Math.random() * dogFacts.length);
-      const factsBox = document.getElementById('facts-box');
-      factsBox.textContent = dogFacts[randomIndex];
-    }
+  const randomIndex = Math.floor(Math.random() * dogFacts.length);
+  const factsText = document.getElementById('facts-text');
+  factsText.textContent = dogFacts[randomIndex];
+}
+
 
     // Display a random fact on page load
     window.onload = displayRandomFact;
